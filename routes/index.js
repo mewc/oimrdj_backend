@@ -20,7 +20,7 @@ router.get('/spotifytoken', function(req, res, next) {
         function(data) {
         console.log(data);
         spotifyApi.setAccessToken(data.body['access_token']);
-        res.status(200).json({spotifyAccessToken: data.body['access_token']})
+        res.status(200).json({spotifyAccessToken: data.body['access_token'], otherData: data})
 
         },
     function(err){
